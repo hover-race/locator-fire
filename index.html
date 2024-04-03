@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- meta charset="utf-8" /-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocatoR</title>
+    <style>
+      html, body, #map {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      }
+      div#footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 18px;
+      margin: 0;
+      padding: 6px;
+      z-index: 2;
+      background: WHITE;
+      }
+
+      #username{   
+        position: fixed; 
+        top:6px;     
+        left: 0;    
+        /* width:30%;  */
+        /* height:5%; */
+        z-index: 5; 
+        background: rgba(255, 255, 255, 0.458);
+        color: black;
+        font-size: 24px;
+      }
+
+      #username_in {
+        font-size: 24px;
+        z-index: 5555; 
+
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="recordLocation.css">
+  </head>
+  <body onload="init()">
+
+  <div id="map" style="float: left;">
+  </div>
+  <div id='username' >
+    Username: <input type="text" id="username_in" value="user1" ondblclick="this.select()" onchange="username_changed(this.value)">
+    <br/>
+    <!-- <button id="username_b" onclick="username_b_clicked"> Username</button> -->
+  </div>
+
+    <div id="trackButton">
+      <img id="trackImg" src="img/icon_fullscreen_on.png" height="45" width="45">
+    </div>
+
+    <label class="toggle" id="toggle-div">
+      <input id="location-checkbox" class="toggle-checkbox" type="checkbox" checked onchange="recordToggled(this.checked)">
+      <div class="toggle-switch"></div>
+      <span class="toggle-label">Record location</span>
+    </label>
+
+    <div id="rect" style="width:80px;height:100px;">  </div> 
+    <!-- <div id="footer">&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</div> -->
+
+    <!-- bring in the google maps library -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDn3N5a5J6Z3o0lPm7ifr7b2nozLNQ__g&libraries=geometry"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script type="text/javascript" src="deps/geoPosition.js"></script>
+    <script type="text/javascript" src="deps/jquery.min.js"></script>
+    <script type="text/javascript" src="js/SlidingMarker.js"></script>
+
+    <script type="text/javascript" src="js/firebase8_common.js" ></script>
+    <script type="text/javascript" src="js/util.js" ></script>
+    <script type="text/javascript" src="js/geo.js" ></script>
+    <script type="text/javascript" src="js/map_main.js" ></script>
+  </body>
+</html>
