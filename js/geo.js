@@ -17,9 +17,6 @@ function getGeolocation() {
 function geo_success_callback(position){
   console.log('geo success', position);
   p([position.coords.latitude, position.coords.longitude]);
-  if (trackAllPoints) {
-    updateBoundingBox();
-  }
   writePoint(
     position.coords.latitude, 
     position.coords.longitude, 
@@ -27,6 +24,11 @@ function geo_success_callback(position){
     getTrackName(), 
     getUsername(),
     );
+
+  if (trackAllPoints) {
+    updateBoundingBox();
+  }
+  
   p('write done')
 }
 
