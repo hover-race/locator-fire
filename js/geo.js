@@ -32,5 +32,8 @@ function geo_success_callback(position){
 
 function geo_error_callback(p){
   console.log('error', p);
+  $("#geoFailureDetails").text("Error: " + p.message);
+  $("#geoFailureDialog").get(0).showModal();
+  // alert(p.message);
   // p.message : error message
 }

@@ -41,6 +41,19 @@
         z-index: 5555; 
 
       }
+
+      #geoFailureDialog {
+        font-size: 150%;
+      }
+
+      .vertical-center {
+        margin: 0;
+        position: absolute;
+        /* top: 50%; */
+        left: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
     </style>
     <link rel="stylesheet" type="text/css" href="recordLocation.css">
   </head>
@@ -65,6 +78,16 @@
     </label>
 
     <div id="rect" style="width:80px;height:100px;">  </div> 
+
+    <dialog id="geoFailureDialog">
+      <p id="geoFailureText"><strong>Failed to get your location</strong></p>
+      <p id="geoFailureDetails" style="font-size: 80%""></p>
+      <form method="dialog">
+          <div style="text-align:center">
+          <button style="text-align:center; font-size: 100%">OK</button>
+        </div>
+      </form>
+    </dialog>
     <!-- <div id="footer">&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</div> -->
 
     <!-- bring in the google maps library -->
