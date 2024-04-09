@@ -184,6 +184,10 @@ function init() {
   if (location.protocol !== "https:") {
     location.protocol = "https:";
   }
+
+  // Trigger geolocation requrest
+  navigator.geolocation.getCurrentPosition(() => {});
+
   setDefaultTrackParam();
   setUsernameFromLocalStorage();
   init_map();
