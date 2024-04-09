@@ -180,6 +180,10 @@ function setDefaultTrackParam() {
 
 // Main
 function init() {
+  // redirect to https. I couldn't figure out how to do this on the server
+  if (location.protocol !== "https:") {
+    location.protocol = "https:";
+  }
   setDefaultTrackParam();
   setUsernameFromLocalStorage();
   init_map();
